@@ -2672,3 +2672,21 @@ button {
 @media (min-width: 1275px) and (max-width: 1324px) { :root { --z: 0.88; } }
 @media (min-width: 1325px) and (max-width: 1374px) { :root { --z: 0.92; } }
 @media (min-width: 1375px) and (max-width: 1400px) { :root { --z: 0.95; } }
+
+
+
+@media (min-width: 1435px) and (max-width: 1450px) {
+  .symbol {
+    right: 171px;
+  }
+}
+@media (min-width: 1450px) and (max-width: 1470px) {
+  .symbol {
+    right: 192px;
+  }
+}
+@media (min-width: 1470px) and (max-width: 1490px) {
+  .symbol {
+    right: 220px;
+  }
+}
