@@ -70,7 +70,9 @@
                     <input type="email" placeholder="Zip Code" class="f">
                 </div>
                 <div class="tick-sec">
-                    <img src="images/tick.svg" alt="">
+                    <div class="custom-check" id="checkBox">
+    <span>✓</span>
+</div>
                     <p>Is the Billing and Shipping address the same?</p>
                 </div>
             </div>
@@ -79,7 +81,7 @@
             <div class="order-summary">
                 <div class="alpha">
 
-                    <img src="images/vect.svg" alt="">
+                    <img class="ikon" src="images/ikon.svg" alt="">
                     <p>Order Summary</p>
                     <img src="images/small-ic.svg" alt="">
 
@@ -365,6 +367,27 @@
             }, 3500);
 
         });
+
+
+
+const checkBox = document.getElementById("checkBox");
+
+checkBox.addEventListener("click", function () {
+    const tick = this.querySelector("span");
+
+    if (tick.style.display === "none") {
+        tick.style.display = "block";
+    } else {
+        tick.style.display ="none";
+    }
+});
+
+
+
+
+
+
+
     </script>
 </body>
 
