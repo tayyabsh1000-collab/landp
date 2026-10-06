@@ -1752,7 +1752,12 @@ button {
     gap: 25px;
     box-sizing: border-box;
   }
-
+.custom-check{
+  width: 25px;
+  height: 25px;
+  border-radius: 8px;
+}
+.custo
   .section-2-part-1,
   .sec-2-part-2 {
     width: 100%;
@@ -2174,7 +2179,7 @@ button {
 /* =====================================================================
    RESPONSIVE FINAL (0 - 768px)
    ===================================================================== */
-@media (max-width: 388px), (min-width: 400px) and (max-width: 768px) {
+@media (max-width: 388px), (min-width: 400px) and (max-width: 1024px) {
 
   :root { --pad: clamp(16px, 5vw, 32px); }
 
@@ -2630,3 +2635,40 @@ button {
   .end-image p { padding: 14px clamp(20px, 8vw, 48px) 0; font-size: clamp(14px, 4vw, 19px); line-height: 1.25; }
   .end-image h4 { padding: 16px 0 6px; font-size: clamp(13px, 3.6vw, 17px); }
 }
+/* ===== 769px - 1024px : tablet, stacked layout ko bade screen par thoda control mein rakhna ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section-1,
+  .section-2 { max-width: 680px; }
+
+  .reward {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .car-1, .car-2, .car-3 {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ===== 1025px - 1400px : aapka desktop design, screen ke hisaab se scale ===== */
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .header,
+  .section-1,
+  .section-2 { zoom: var(--z, 0.71); }
+
+  .header { position: relative; }
+
+  .section-1,
+  .section-2 { justify-content: center; }
+}
+
+@media (min-width: 1025px) and (max-width: 1074px) { :root { --z: 0.71; } }
+@media (min-width: 1075px) and (max-width: 1124px) { :root { --z: 0.74; } }
+@media (min-width: 1125px) and (max-width: 1174px) { :root { --z: 0.78; } }
+@media (min-width: 1175px) and (max-width: 1224px) { :root { --z: 0.81; } }
+@media (min-width: 1225px) and (max-width: 1274px) { :root { --z: 0.85; } }
+@media (min-width: 1275px) and (max-width: 1324px) { :root { --z: 0.88; } }
+@media (min-width: 1325px) and (max-width: 1374px) { :root { --z: 0.92; } }
+@media (min-width: 1375px) and (max-width: 1400px) { :root { --z: 0.95; } }
