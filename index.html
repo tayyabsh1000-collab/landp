@@ -17,32 +17,36 @@
         </div>
         <div class="main-head">
             <img src="images/logo.svg" alt="" class="logo" />
-            <div class="review">
-                <div class="avatar-box">
-                    <div class="avatars">
-                        <img src="images/man-1.svg" alt="User 1" />
-                        <img src="images/man-2.svg" alt="User 2" />
-                        <img src="images/man-3.svg" alt="User 3" />
+            <div class="top-main">
+                <div class="review">
+                    <div class="avatar-box">
+                        <div class="avatars">
+                            <img src="images/man-1.svg" alt="User 1" />
+                            <img src="images/man-2.svg" alt="User 2" />
+                            <img src="images/man-3.svg" alt="User 3" />
+                        </div>
+                    </div>
+                    <p>More than <span>2500+</span> Happy Car Owners</p>
+                </div>
+
+                <div class="symbol">
+                    <div class="same-symbol">
+                        <img src="images/watch.svg" alt="" class="hint" />
+                        <p>30 Days Warranty</p>
+                    </div>
+                    <div class="same-symbol">
+                        <img src="images/earth.svg" alt="" class="hint" />
+                        <p>Worldwide Shipping</p>
+                    </div>
+                    <div class="same-symbol">
+                        <img src="images/protection.svg" alt="" class="hint" />
+                        <p>Lifetime Warranty</p>
                     </div>
                 </div>
-                <p>More than <span>2500+</span> Happy Car Owners</p>
             </div>
         </div>
 
-        <div class="symbol">
-            <div class="same-symbol">
-                <img src="images/watch.svg" alt="" class="hint" />
-                <p>30 Days Warranty</p>
-            </div>
-            <div class="same-symbol">
-                <img src="images/earth.svg" alt="" class="hint" />
-                <p>Worldwide Shipping</p>
-            </div>
-            <div class="same-symbol">
-                <img src="images/protection.svg" alt="" class="hint" />
-                <p>Lifetime Warranty</p>
-            </div>
-        </div>
+
     </header>
     <section class="section-1">
         <div class="part-1">
@@ -71,9 +75,19 @@
                 </div>
                 <div class="tick-sec">
                     <div class="custom-check" id="checkBox">
-    <span>✓</span>
-</div>
+                        <span>✓</span>
+                    </div>
                     <p>Is the Billing and Shipping address the same?</p>
+                </div>
+                 <h2>Billing Address</h2>
+                <div class="in-sec-2">
+                    <input type="email" placeholder="Address" class="c">
+                    <input type="email" placeholder="Apartment, suite, etc. (optional)" class="d">
+                    <input type="email" placeholder="City" class="d">
+                    <input type="email" placeholder="Select State" class="d">
+                    <input type="email" placeholder="United States" class="d">
+                    <input type="email" placeholder="Zip Code" class="f">
+                    
                 </div>
             </div>
         </div>
@@ -371,15 +385,31 @@
 
 
 const checkBox = document.getElementById("checkBox");
+const billingTitle = document.querySelector(".in-sec-2").previousElementSibling;
+const billingSection = document.querySelector(".in-sec-2");
+const rightSection = document.querySelector(".sec-2-part-2");
+
+// Starting state:
+// Checkbox BLUE
+// Billing section hidden
+checkBox.classList.add("active");
+billingTitle.style.display = "none";
+billingSection.style.display = "none";
 
 checkBox.addEventListener("click", function () {
-    const tick = this.querySelector("span");
 
-    if (tick.style.display === "none") {
-        tick.style.display = "block";
+    this.classList.toggle("active");
+
+    if (this.classList.contains("active")) {
+        // Blue checkbox
+        billingTitle.style.display = "none";
+        billingSection.style.display = "none";
     } else {
-        tick.style.display ="none";
+        // White checkbox
+        billingTitle.style.display = "block";
+        billingSection.style.display = "block";
     }
+
 });
 
 

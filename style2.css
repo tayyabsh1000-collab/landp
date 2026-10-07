@@ -103,12 +103,16 @@
 }
 
 /* .............................section-1...................... */
+.sections{
+  max-width: 1070px;
+   margin:auto;
+  display: flex;
+  align-items: baseline;
+  gap: 99px;
+}
 .section-1 {
   max-width: 1070px;
   width: 100%;
-  margin: auto;
-  display: flex;
-  gap: 115.27px;
 }
 
 .blue {
@@ -299,7 +303,11 @@
   max-width: 474.15px;
   width: 100%;
 }
-
+.part-respon{
+  display: none;
+   max-width: 474.15px;
+  width: 100%;
+}
 .order-summary {
   margin-top: 65.5px;
   display: flex;
@@ -648,8 +656,6 @@ button {
   max-width: 1070px;
   width: 100%;
   margin: auto;
-  display: flex;
-    gap: 115.27px;
 }
 
 .ship-sec {
@@ -930,8 +936,7 @@ button {
 .sec-2-part-2 {
   max-width: 474.9px;
   width: 100%;
-  /* height: 816.7px; */
-  margin-top: -83.5px;
+  margin-top: 80px;
   margin-bottom: 52px;
 }
 
@@ -1194,7 +1199,9 @@ button {
 .custom-check.active span {
     display: block;
 }
-
+.high{
+  display: none;
+}
 /* Clicked = White + No Tick */
 .custom-check:not(.active) {
     background: white;
@@ -1266,12 +1273,18 @@ button {
     font-size: 12px;
     color: white;
   }
-
+.high{
+  display: flex;
+  flex-direction: column;
+}
   .header {
     border-bottom: 0;
     height: none;
   }
-
+.sections{
+  flex-direction: column;
+  gap: 0px;
+}
   .section-1 {
     flex-direction: column-reverse;
     margin: 0;
@@ -1290,7 +1303,9 @@ button {
     max-height: 43px;
     height: 100%;
   }
-
+.top-main{
+  gap: 22px;
+}
   .review {
     max-width: 228px;
     width: 100%;
@@ -1299,6 +1314,7 @@ button {
     justify-content: center;
     align-items: center;
     gap: 14px;
+
   }
 
   .review p {
@@ -1336,6 +1352,7 @@ button {
     padding: 0 22px;
     align-items: flex-start;
     gap: 24px;
+    margin-top: 20px;
   }
 
   .same-symbol {
@@ -1685,6 +1702,8 @@ button {
 
   .contact {
     height: 161px;
+    margin-top: 51px;
+
   }
 
   .info {
@@ -1710,11 +1729,11 @@ button {
     color: #0D0D0D;
   }
 
-  .in-sec {
+  .in-sec{
     margin-top: 17px;
   }
 .in-sec-2 {
-    margin-top: 25px;
+    margin-top: 30px;
     margin-bottom: 21px;
   }
   .c {
@@ -1731,7 +1750,7 @@ button {
     margin-bottom: 23px;
   }
 
-  .in-sec input {
+  .in-sec input,.in-sec-2 input {
     font-weight: 400;
     font-size: 16px;
     line-height: 13.94px;
@@ -1786,7 +1805,7 @@ button {
   /* Shipping */
   .ship-sec {
     width: 100%;
-    margin-top: 0;
+    margin-top: 25px;
     padding: 12px 13px 20.5px 12px;
   }
 
@@ -2195,9 +2214,21 @@ button {
 /* =====================================================================
    RESPONSIVE FINAL (0 - 768px)
    ===================================================================== */
-@media (max-width: 388px), (min-width: 400px) and (max-width: 1024px) {
+/* @media (max-width: 388px), (min-width: 400px) and (max-width: 1024px) {
 
   :root { --pad: clamp(16px, 5vw, 32px); }
+
+  html, body { max-width: 100%; overflow-x: hidden; }
+  img { max-width: 100%; }
+
+  /* ============================ HEADER ============================ */
+  /* other responsives */
+/* =====================================================================
+   RESPONSIVE: 0-387px aur 400px-1024px  (388-399px ko touch nahi kia)
+   ===================================================================== */
+@media (max-width: 387.98px), (min-width: 399.02px) and (max-width: 1024px) {
+
+  :root { --pad: clamp(14px, 5vw, 32px); }
 
   html, body { max-width: 100%; overflow-x: hidden; }
   img { max-width: 100%; }
@@ -2219,12 +2250,14 @@ button {
   .first-blue p { font-weight: 700; font-size: clamp(11px, 3vw, 14px); color: #fff; }
 
   .header { height: auto; border-bottom: 0; padding-bottom: 14px; }
+  .high { display: flex; flex-direction: column; }
 
   .main-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
+    margin-top: 20px;
     padding: 18px var(--pad) 0;
   }
   .logo {
@@ -2234,6 +2267,14 @@ button {
     max-height: none;
     height: auto;
     flex: none;
+  }
+  .top-main {
+    min-width: 0;
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
   }
   .review {
     margin: 0;
@@ -2258,28 +2299,59 @@ button {
 
   .symbol {
     position: static;
-    margin: 14px 0 0;
-    padding: 0 var(--pad);
+    width: 0;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px clamp(8px, 3vw, 20px);
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
   }
-  .same-symbol { display: flex; align-items: center; gap: 3px; }
-  .same-symbol p { font-size: clamp(7px, 2.2vw, 11px); line-height: 1.2; text-align: left; }
-  .same-symbol img { width: clamp(10px, 2.8vw, 13px); height: clamp(10px, 2.8vw, 13px); flex: none; }
+  .same-symbol { display: flex; align-items: center; gap: 2px; min-width: 0; }
+  .same-symbol p {
+    font-size: clamp(6.5px, 2vw, 10px);
+    line-height: 1.2;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .same-symbol img { width: clamp(9px, 2.6vw, 12px); height: clamp(9px, 2.6vw, 12px); flex: none; }
 
-  /* ============================ SECTION 1 ============================ */
+  /* ============================ LAYOUT ============================ */
+  .sections { flex-direction: column; gap: 0; }
+
+  /* HTML ka order hi sahi hai: summary -> contact -> shipping/payment */
   .section-1 {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
     padding: 0 var(--pad);
-    gap: 36px;
+    gap: 0;
   }
-  .part-1, .part-2 { width: 100%; max-width: none; }
+  .section-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 28px var(--pad) 24px;
+    gap: 28px;
+  }
+
+  /* mobile wala summary dikhao, desktop wala chhupao */
+  .part-respon {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    margin-top: 16px;
+  }
+  .part-2 { display: none; }
+  .part-1, .sec-2-part-1, .sec-2-part-2 { width: 100%; max-width: none; margin-top: 0; margin-bottom: 0; }
   .blue { display: none; }
 
   /* ---- contact ---- */
@@ -2289,7 +2361,7 @@ button {
     height: auto;
     padding-bottom: 14px;
     border-radius: 14px;
-    margin-top: 0;
+    margin-top: 55px;
   }
   .contact p {
     padding: 17px 0 0 18px;
@@ -2309,6 +2381,7 @@ button {
   }
   .adrees h2 { font-size: clamp(15px, 4.2vw, 20px); line-height: 1.2; }
   .in-sec { margin-top: 16px; }
+  .in-sec-2 { margin-top: 16px; margin-bottom: 21px; }
 
   .a, .b, .c, .d, .f {
     display: block;
@@ -2321,7 +2394,7 @@ button {
   }
   .d { border-bottom: 1.14px solid rgb(173 156 156 / 40%); }
   .f { margin-bottom: 22px; }
-  .in input, .in-sec input { font-size: 16px; line-height: normal; }
+  .in input, .in-sec input, .in-sec-2 input { font-size: 16px; line-height: normal; }
 
   .tick-sec { align-items: center; gap: 10px; margin-bottom: 22px; }
   .tick-sec p { font-size: clamp(12.5px, 3.6vw, 16px); line-height: 1.3; }
@@ -2361,12 +2434,7 @@ button {
     border: 0.98px solid #acacac;
     border-radius: 4px;
   }
-  .main-tint {
-    flex: 1;
-    min-width: 0;
-    max-width: none;
-    padding: 0 14px 12px 0;
-  }
+  .main-tint { flex: 1; min-width: 0; max-width: none; padding: 0 14px 12px 0; }
   .tint {
     display: flex;
     justify-content: space-between;
@@ -2409,66 +2477,294 @@ button {
   .line { max-width: 100%; margin-bottom: 40px; }
 
   /* ---- reward box (cqw = box ki width ka 1%) ---- */
-  .reward {
+
+   .reward {
+        container-type: inline-size;
+        position: relative;
+        width: 100%;
+        max-width: none;
+        height: auto;
+
+        aspect-ratio: 468.9 / 250;
+
+        margin: 0;
+
+        /* fire ko cut nahi karega */
+        overflow: visible;
+
+       border-radius: 10px;
+        border: 1px solid #aec7d1;
+        border-right: none;
+
+        background: linear-gradient(
+            118.94deg,
+            rgba(99, 171, 255, 0.65) 11.46%,
+            rgba(255, 255, 255, 0.65) 96.56%
+        );
+    }
+
+
+    /* ================= REWARD HEAD ================= */
+
+    .reward-head {
+        position: absolute;
+
+        top: 5.12cqw;
+        left: 5.12cqw;
+
+        display: flex;
+        align-items: center;
+
+        gap: 2.03cqw;
+
+        margin: 0;
+    }
+
+    .reward-head img {
+        width: 16.8cqw;
+        height: auto;
+
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .reward-head p {
+        margin: 0;
+
+        font-size: 4.11cqw;
+        line-height: 1.25;
+        font-weight: 700;
+
+        white-space: nowrap;
+    }
+ .reward {
     container-type: inline-size;
     width: 100%;
     max-width: none;
     height: auto;
-    aspect-ratio: 346 / 185;
-    margin: 0 0 32px;
-    overflow-x: clip;
+    aspect-ratio: 468.9 / 250;
+    overflow: visible;
+    position: relative;
+    border-radius: 10px;
   }
-  .reward-head { top: 5.2cqw; left: 1.7cqw; gap: 2.7cqw; }
-  .reward-head img { width: 16.8cqw; height: auto; }
-  .reward-head p { font-size: 4.1cqw; line-height: 1.4; }
 
-  .reward-para { top: 17cqw; left: 3.2cqw; width: 44.8cqw; max-width: none; height: auto; line-height: 1.4; }
-  .reward-para p { font-size: 3.47cqw; line-height: 1.4; }
 
-  .bag { top: 1.2cqw; left: 53.9cqw; width: 55cqw; max-width: none; height: auto; }
-  .bag-image { display: block; width: 100%; height: auto; max-width: none; }
+    /* ================= PARA ================= */
 
-  .clean { top: 10.1cqw; left: 26cqw; width: auto; max-width: none; height: auto; }
-  .clean img { height: 43.4cqw; width: auto; max-width: none; display: block; }
+    .reward-para {
+        position: absolute;
 
-  .free-1 { top: 32.1cqw; left: 56.9cqw; width: 12.2cqw; max-width: none; height: auto; }
-  .free-1 img { width: 100%; height: auto; display: block; }
-  .free-2 { display: none; }
-  .free-res { display: block; position: absolute; top: 20.8cqw; left: 68.5cqw; width: 17cqw; }
-  .free-res img { width: 100%; height: auto; display: block; }
+        top: 16.55cqw;
+        left: 5.20cqw;
 
-  .fire { top: -5.2cqw; left: 90.2cqw; width: 10.7cqw; max-width: none; height: auto; }
-  .fire img { width: 100%; height: auto; display: block; }
+        width: 44.79cqw;
+        max-width: none;
 
-  .join {
-    top: 45.7cqw;
-    left: 6.6cqw;
-    width: 86.7cqw;
-    max-width: none;
-    height: 14.7cqw;
-    gap: 2.4cqw;
-    align-items: center;
-    justify-content: center;
-    border-radius: 3.4cqw;
+        height: auto;
+        margin: 0;
+    }
+
+    .reward-para p {
+        margin: 0;
+
+        font-size: 3.47cqw;
+        line-height: 1.4;
+    }
+
+
+    /* ================= BAG ================= */
+
+   
+  /* BAG */
+  .bag {
+    position: absolute !important;
+           top: -4.62cqw !important;
+        left: 44.76cqw !important;
+
+
+    width: 58.44cqw !important;
+    height: 58.44cqw !important;
+
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: block !important;
+    z-index: 2;
   }
-  .join p { font-size: 4.6cqw; line-height: 1.2; }
-  .check { width: 8.1cqw; max-width: none; height: 8.1cqw; margin: 0; border-radius: 1.7cqw; }
 
-  /* ============================ SECTION 2 ============================ */
-  .section-2 {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 28px var(--pad) 24px;
-    gap: 28px;
+  .bag-image {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    border-bottom-right-radius: 13.75px;
   }
-  .sec-2-part-1, .sec-2-part-2 { width: 100%; max-width: none; margin: 0; }
 
-  /* ---- shipping ---- */
-  .ship-sec { margin-top: 0; padding: 12px 12px 18px; border-radius: 14px; }
+    /* ================= CLEANING SPRAY ================= */
+
+    .clean {
+        position: absolute;
+
+        top: 11.02cqw;
+        left: 27.97cqw;
+
+        width: auto;
+        max-width: none;
+
+        height: auto;
+        margin: 0;
+
+        z-index: 3;
+    }
+
+    .clean img {
+        display: block;
+
+        height: 40.09cqw;
+        width: auto;
+
+        max-width: none;
+    }
+
+
+    /* ================= FREE 1 ================= */
+
+    .free-1 {
+        position: absolute;
+
+        top: 27.43cqw;
+        left: 51.82cqw;
+
+        width: 12.02cqw;
+        max-width: none;
+
+        height: auto;
+        margin: 0;
+
+        z-index: 5;
+    }
+
+    .free-1 img {
+        display: block;
+
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* ================= FREE 2 ================= */
+
+    .free-2 {
+        display: none;
+    }
+
+
+    /* ================= FREE RES ================= */
+
+    .free-res {
+        display: block;
+
+        position: absolute;
+
+        top: 20.8cqw;
+        left: 68.5cqw;
+
+        width: 17cqw;
+        max-width: none;
+
+        height: auto;
+        margin: 0;
+
+        z-index: 5;
+    }
+
+    .free-res img {
+        display: block;
+
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* ================= FIRE ================= */
+
+    .fire {
+        position: absolute;
+
+        top: -5.12cqw;
+        left: 92.18cqw;
+
+        width: 10.02cqw;
+        max-width: none;
+
+        height: auto;
+        margin: 0;
+
+        z-index: 10;
+    }
+
+    .fire img {
+        display: block;
+
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* ================= JOIN ================= */
+
+   .join {
+   position: absolute !important;
+        left: 7.23cqw !important;
+        bottom: -6.8cqw !important;
+        top: auto !important;
+        width: 86.66cqw !important;
+        max-width: none !important;
+        height: 14.74cqw !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 2.40cqw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 3.4cqw !important;
+        box-sizing: border-box !important;
+        z-index: 6;
+    }
+
+
+  .join p {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 4.60cqw !important;
+    line-height: 1.2 !important;
+  }
+
+  .join .check {
+    width: 8.10cqw !important;
+    height: 8.10cqw !important;
+
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    flex-shrink: 0 !important;
+    border-radius: 1.7cqw !important;
+  }
+  /* ---- shipping method ---- */
+  .ship-sec { margin-top: 25px; padding: 12px 12px 18px; border-radius: 14px; }
   .ship-con { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
   .ship-con h3 { font-size: clamp(14px, 4.2vw, 20px); line-height: 1.2; }
   .ship-box {
@@ -2494,22 +2790,20 @@ button {
   .exp-sh { margin-top: 12px; }
   .exp, .st-con { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
   .exp-con { min-width: 0; }
-  .exp-con img { display: block; width: clamp(95px, 34vw, 150px); max-width: 100%; height: auto; }
+  .exp-con img { display: block; width: clamp(80px, 34vw, 150px); max-width: 100%; height: auto; }
   .exp-con p { font-size: clamp(12px, 3.6vw, 16px); line-height: 1.2; padding-top: 3px; letter-spacing: normal; }
-  .blue-circle, .brown-circle {
-    width: 22px; height: 22px; min-width: 22px; flex: none; border-width: 4px;
-  }
+  .blue-circle, .brown-circle { width: 22px; height: 22px; min-width: 22px; flex: none; border-width: 4px; }
   .exp-sh h1, .standard h2 { font-size: clamp(14px, 4vw, 18px); line-height: 1.2; flex: none; margin: 0; }
 
   /* ---- payment ---- */
-  .payment-sec { width: 100%; margin: 0; padding: 14px 12px; border-radius: 14px; }
+  .payment-sec { width: 100%; margin: 26px 0 28px; padding: 14px 12px; border-radius: 14px; }
   .pay-content { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 10px; }
   .pay-content h2 { display: none; }
   .h2-res { display: flex; align-items: center; gap: 8px; }
   .h2-res h3 { font-size: clamp(14px, 4.2vw, 18px); line-height: 1.2; }
   .lock { display: flex; align-items: center; gap: 5px; }
   .lock img { width: 12px; height: 12px; flex: none; }
-  .lock p { font-size: clamp(9.5px, 2.8vw, 13px); line-height: 1.2; white-space: nowrap; }
+  .lock p { font-size: clamp(9.5px, 2.8vw, 13px); line-height: 1.2; }
 
   .all { --h: clamp(46px, 12.5vw, 56px); width: 100%; margin-top: 16px; position: relative; }
   .all input { font-size: 16px; line-height: normal; }
@@ -2518,7 +2812,7 @@ button {
     width: 100%;
     max-width: none;
     height: var(--h);
-    padding: 0 118px 0 14px;
+    padding: 0 100px 0 14px;
     text-indent: 0;
   }
   .input-double { display: flex; width: 100%; }
@@ -2537,7 +2831,7 @@ button {
     transform: translateY(-50%);
     gap: 4px;
   }
-  .bank img { width: 34px; height: auto; max-height: 22px; }
+  .bank img { width: 30px; height: auto; max-height: 22px; }
 
   .proc { width: 100%; padding: clamp(18px, 5vw, 26px) 0; gap: 7px; }
   .proc p { font-size: clamp(16px, 4.8vw, 22px); line-height: 1.2; }
@@ -2548,6 +2842,7 @@ button {
   .smal { width: min(165px, 55%); height: auto; }
 
   /* ---- trust cards ---- */
+  .sec-2-part-2 { margin-top: 0; }
   .main-2 {
     width: 100%;
     max-width: none;
@@ -2567,37 +2862,35 @@ button {
     aspect-ratio: 315 / 143;
     margin: clamp(14px, 4vw, 24px) 0 0;
     overflow: hidden;
-    --ov: 14cqw;          /* image aur blur ke fade ka overlap */
+    --ov: 14cqw;
     align-items: stretch;
   }
   .car-1 { margin-top: clamp(22px, 6vw, 32px); }
 
-  /* image apni natural width par khatam hoti hai, blur uske baad shuru hota hai,
-     dono ek doosre mein fade hote hain (jod nazar nahi aata) */
   .door-1, .door-2, .door-3,
-  .blur, .blur-2, .blur-3 {
+  .blur, .blur-2 {
     position: relative;
-    top: auto; left: auto; right: auto;
+    top: auto; left: 10px; right: auto;
     flex: none;
     width: auto;
     max-width: none;
     height: 100%;
     object-fit: cover;
   }
+ .blur-3{
+left: 60px;
+ }
   .door-1, .door-2, .door-3 { border-radius: 8px; }
 
-  /* car-1 aur car-3: image left, blur uske right par */
   .door-1, .door-3 {
     -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--ov)), transparent);
             mask-image: linear-gradient(to right, #000 calc(100% - var(--ov)), transparent);
   }
-  .blur, .blur-3 {
+  .blur {
     margin-left: calc(var(--ov) * -1);
     -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--ov));
             mask-image: linear-gradient(to right, transparent, #000 var(--ov));
   }
-
-  /* car-2: image right, blur uske left par (row-reverse) */
   .door-2 {
     -webkit-mask-image: linear-gradient(to left, #000 calc(100% - var(--ov)), transparent);
             mask-image: linear-gradient(to left, #000 calc(100% - var(--ov)), transparent);
@@ -2651,58 +2944,22 @@ button {
   .end-image p { padding: 14px clamp(20px, 8vw, 48px) 0; font-size: clamp(14px, 4vw, 19px); line-height: 1.25; }
   .end-image h4 { padding: 16px 0 6px; font-size: clamp(13px, 3.6vw, 17px); }
 }
-/* ===== 769px - 1024px : tablet, stacked layout ko bade screen par thoda control mein rakhna ===== */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .section-1,
-  .section-2 { max-width: 680px; }
 
-  .reward {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .car-1, .car-2, .car-3 {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+/* chhoti screens: 387px aur us se neeche */
+@media (max-width: 387.98px) {
+  .main-head { flex-wrap: wrap; row-gap: 10px; }
+  .code { gap: 8px; }
+  .code input { font-size: 13px; }
+  .code button { flex-basis: 68px; font-size: 13px; }
+  .exp-sh, .standard { padding: 10px; }
+  .exp-con img { width: clamp(80px, 30vw, 120px); }
 }
-
-/* ===== 1025px - 1400px : aapka desktop design, screen ke hisaab se scale ===== */
-@media (min-width: 1025px) and (max-width: 1400px) {
-  .header,
-  .section-1,
-  .section-2 { zoom: var(--z, 0.71); }
-
-  .header { position: relative; }
-
-  .section-1,
-  .section-2 { justify-content: center; }
-}
-
-@media (min-width: 1025px) and (max-width: 1074px) { :root { --z: 0.71; } }
-@media (min-width: 1075px) and (max-width: 1124px) { :root { --z: 0.74; } }
-@media (min-width: 1125px) and (max-width: 1174px) { :root { --z: 0.78; } }
-@media (min-width: 1175px) and (max-width: 1224px) { :root { --z: 0.81; } }
-@media (min-width: 1225px) and (max-width: 1274px) { :root { --z: 0.85; } }
-@media (min-width: 1275px) and (max-width: 1324px) { :root { --z: 0.88; } }
-@media (min-width: 1325px) and (max-width: 1374px) { :root { --z: 0.92; } }
-@media (min-width: 1375px) and (max-width: 1400px) { :root { --z: 0.95; } }
-
-
-
-@media (min-width: 1435px) and (max-width: 1450px) {
-  .symbol {
-    right: 171px;
+@media (max-width: 350px) {
+  .main-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
-}
-@media (min-width: 1450px) and (max-width: 1470px) {
-  .symbol {
-    right: 192px;
-  }
-}
-@media (min-width: 1470px) and (max-width: 1490px) {
-  .symbol {
-    right: 220px;
-  }
+  .top-main { width: 100%; }
+  .review { width: 100%; max-width: none; }
 }
