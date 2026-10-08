@@ -2594,19 +2594,14 @@ button {
 
   .bag-image {
     display: block !important;
-
     width: 100% !important;
     height: 100% !important;
-
     max-width: none !important;
     max-height: none !important;
-
     margin: 0 !important;
     padding: 0 !important;
-
     object-fit: contain !important;
     object-position: center center !important;
-
     border-bottom-right-radius: 13.75px;
   }
 
@@ -2614,16 +2609,12 @@ button {
 
     .clean {
         position: absolute;
-
         top: 11.02cqw;
         left: 27.97cqw;
-
         width: auto;
         max-width: none;
-
         height: auto;
         margin: 0;
-
         z-index: 3;
     }
 
@@ -2719,10 +2710,7 @@ button {
         width: 100%;
         height: auto;
     }
-
-
     /* ================= JOIN ================= */
-
    .join {
    position: absolute !important;
         left: 7.23cqw !important;
@@ -2741,24 +2729,18 @@ button {
         box-sizing: border-box !important;
         z-index: 6;
     }
-
-
   .join p {
     margin: 0 !important;
     padding: 0 !important;
-
     font-size: 4.60cqw !important;
     line-height: 1.2 !important;
   }
-
   .join .check {
     width: 8.10cqw !important;
     height: 8.10cqw !important;
-
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
-
     flex-shrink: 0 !important;
     border-radius: 1.7cqw !important;
   }
@@ -2831,11 +2813,9 @@ button {
     gap: 4px;
   }
   .bank img { width: 30px; height: auto; max-height: 22px; }
-
   .proc { width: 100%; padding: clamp(18px, 5vw, 26px) 0; gap: 7px; }
   .proc p { font-size: clamp(16px, 4.8vw, 22px); line-height: 1.2; }
   .proc img { width: auto; height: 19px; }
-
   .end-img { padding-top: 14px; gap: 8px; }
   .big { width: min(178px, 60%); height: auto; }
   .smal { width: min(165px, 55%); height: auto; }
@@ -2880,7 +2860,6 @@ button {
 left: 60px;
  }
   .door-1, .door-2, .door-3 { border-radius: 8px; }
-
   .door-1, .door-3 {
     -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--ov)), transparent);
             mask-image: linear-gradient(to right, #000 calc(100% - var(--ov)), transparent);
@@ -2925,7 +2904,6 @@ left: 60px;
     line-height: 4.6cqw;
     color: #0d0d0d;
   }
-
   /* ---- testimonial ---- */
   .end-image { width: 100%; margin-top: 28px; padding-bottom: 16px; overflow: hidden; border-radius: 12px; }
   .cars-img { width: 100%; }
@@ -2943,7 +2921,6 @@ left: 60px;
   .end-image p { padding: 14px clamp(20px, 8vw, 48px) 0; font-size: clamp(14px, 4vw, 19px); line-height: 1.25; }
   .end-image h4 { padding: 16px 0 6px; font-size: clamp(13px, 3.6vw, 17px); }
 }
-
 /* chhoti screens: 387px aur us se neeche */
 @media (max-width: 387.98px) {
   .main-head { flex-wrap: wrap; row-gap: 10px; }
